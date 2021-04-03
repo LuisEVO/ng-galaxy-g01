@@ -12,11 +12,13 @@
 ### Generar una aplicacion 
 
 `ng generate application <nombre de la aplicación>  --routing true|false --style css`
+
 `ng g app <nombre de la aplicación>  --routing true|false --style css`
 
-###  
+###  Correr proyecto
 
 `ng serve`
+
 `ng serve --project <nombre de la aplicación>`
 
 
