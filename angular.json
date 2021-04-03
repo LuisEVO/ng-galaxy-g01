@@ -3,28 +3,28 @@
   "version": 1,
   "newProjectRoot": "apps",
   "projects": {
-    "app-s01-binding": {
+    "app-s01-data-binding": {
       "projectType": "application",
       "schematics": {},
-      "root": "apps/app-s01-binding",
-      "sourceRoot": "apps/app-s01-binding/src",
+      "root": "apps/app-s01-data-binding",
+      "sourceRoot": "apps/app-s01-data-binding/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app-s01-binding",
-            "index": "apps/app-s01-binding/src/index.html",
-            "main": "apps/app-s01-binding/src/main.ts",
-            "polyfills": "apps/app-s01-binding/src/polyfills.ts",
-            "tsConfig": "apps/app-s01-binding/tsconfig.app.json",
+            "outputPath": "dist/app-s01-data-binding",
+            "index": "apps/app-s01-data-binding/src/index.html",
+            "main": "apps/app-s01-data-binding/src/main.ts",
+            "polyfills": "apps/app-s01-data-binding/src/polyfills.ts",
+            "tsConfig": "apps/app-s01-data-binding/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/app-s01-binding/src/favicon.ico",
-              "apps/app-s01-binding/src/assets"
+              "apps/app-s01-data-binding/src/favicon.ico",
+              "apps/app-s01-data-binding/src/assets"
             ],
             "styles": [
-              "apps/app-s01-binding/src/styles.css"
+              "apps/app-s01-data-binding/src/styles.css"
             ],
             "scripts": []
           },
@@ -32,8 +32,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/app-s01-binding/src/environments/environment.ts",
-                  "with": "apps/app-s01-binding/src/environments/environment.prod.ts"
+                  "replace": "apps/app-s01-data-binding/src/environments/environment.ts",
+                  "with": "apps/app-s01-data-binding/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -61,33 +61,33 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-s01-binding:build"
+            "browserTarget": "app-s01-data-binding:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-s01-binding:build:production"
+              "browserTarget": "app-s01-data-binding:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-s01-binding:build"
+            "browserTarget": "app-s01-data-binding:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "apps/app-s01-binding/src/test.ts",
-            "polyfills": "apps/app-s01-binding/src/polyfills.ts",
-            "tsConfig": "apps/app-s01-binding/tsconfig.spec.json",
-            "karmaConfig": "apps/app-s01-binding/karma.conf.js",
+            "main": "apps/app-s01-data-binding/src/test.ts",
+            "polyfills": "apps/app-s01-data-binding/src/polyfills.ts",
+            "tsConfig": "apps/app-s01-data-binding/tsconfig.spec.json",
+            "karmaConfig": "apps/app-s01-data-binding/karma.conf.js",
             "assets": [
-              "apps/app-s01-binding/src/favicon.ico",
-              "apps/app-s01-binding/src/assets"
+              "apps/app-s01-data-binding/src/favicon.ico",
+              "apps/app-s01-data-binding/src/assets"
             ],
             "styles": [
-              "apps/app-s01-binding/src/styles.css"
+              "apps/app-s01-data-binding/src/styles.css"
             ],
             "scripts": []
           }
@@ -96,9 +96,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/app-s01-binding/tsconfig.app.json",
-              "apps/app-s01-binding/tsconfig.spec.json",
-              "apps/app-s01-binding/e2e/tsconfig.json"
+              "apps/app-s01-data-binding/tsconfig.app.json",
+              "apps/app-s01-data-binding/tsconfig.spec.json",
+              "apps/app-s01-data-binding/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -108,17 +108,17 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "apps/app-s01-binding/e2e/protractor.conf.js",
-            "devServerTarget": "app-s01-binding:serve"
+            "protractorConfig": "apps/app-s01-data-binding/e2e/protractor.conf.js",
+            "devServerTarget": "app-s01-data-binding:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "app-s01-binding:serve:production"
+              "devServerTarget": "app-s01-data-binding:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "app-s01-binding"
+  "defaultProject": "app-s01-data-binding"
 }
