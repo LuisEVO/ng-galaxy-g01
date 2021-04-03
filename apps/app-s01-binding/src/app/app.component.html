@@ -1,0 +1,30 @@
+DATA BINDING
+
+<hr>
+
+- STRING INTERPOLATION (INTERPOLACION DE CADENAS)
+
+<h1>{{ title }}</h1>
+
+<p>Student</p>
+<p>
+  {{ student.name }} {{ student.lastName }}
+</p>
+<p>Active</p>
+<p>{{ active }}</p>
+
+<p>
+  Inscribete al taller
+</p>
+
+<input type="text" value="{{ student.name }}" >
+
+<hr>
+
+- PROPERTY BINDING (ENLACE DE PROPIEDADES) 
+<input type="checkbox" [checked]="active" >
+
+<hr>
+
+- EVENT BINDING (ENLACE DE EVENTOS) 
+<button (click)="save()" >Guardar</button>

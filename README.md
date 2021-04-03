@@ -1,27 +1,22 @@
-# NgGalaxyG01
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+## Comandos de angular cli - Usandos en clase
 
-## Development server
+### Crear proyecto normal (mono aplicación)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`ng new <nombre-proyecto> --strict true|false --routing true|false --style css|sass|scss|less|stylus`
 
-## Code scaffolding
+### Crear espacio de trabajo (multi aplicación)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`ng new <nombre-proyecto> --strict true|false --create-application false`
 
-## Build
+### Generar una aplicacion 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`ng generate application <nombre de la aplicación>  --routing true|false --style css`
+`ng g app <nombre de la aplicación>  --routing true|false --style css`
 
-## Running unit tests
+###  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`ng serve`
+`ng serve --project <nombre de la aplicación>`
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
