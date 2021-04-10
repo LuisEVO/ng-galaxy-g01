@@ -22,3 +22,23 @@
 
 <h2>EVENT BINDING (ENLACE DE EVENTOS) </h2>
 <button (click)="save()" >Guardar</button>
+
+<hr>
+
+<h2>TWO WAY DATA BINDING (ENLACE BIDIRECCIONAL) </h2>
+
+<input type="text" [value]="name" (keyup)="updateName($event)">
+<input type="text" [(ngModel)]="name">
+
+<p>{{ name }}</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

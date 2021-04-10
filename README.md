@@ -21,4 +21,16 @@
 
 `ng serve --project <nombre de la aplicación>`
 
+`ng serve --project <nombre de la aplicación> --port 4201`
+
+###  Correr proyecto y abrir el navegador
+
+`ng serve -o`
+
+###  Contruir la aplicacion
+
+`ng build`
+`ng build --project <nombre de la aplicación>`
+
+
 
