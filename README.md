@@ -15,6 +15,14 @@
 
 `ng g app <nombre de la aplicación>  --routing true|false --style css`
 
+###  Generar un componente
+
+`ng generate componente <nombre del componente>`
+
+`ng g c <nombre del componente>`
+
+`ng g c <ruta del componente>/<nombre del componente>`
+
 ###  Correr proyecto
 
 `ng serve`
