@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { Tier } from '../../types/tier.type';
 
 @Component({
@@ -11,12 +11,16 @@ export class BadgeComponent implements OnInit {
   @Input() value: string;
   textColor: string;
 
+  @HostBinding('class')
+  get cssClass(): string {
+    return `badge bg-${this.tier} ${this.textColor ? this.textColor : ''}`;
+  }
+
   constructor() {
   }
 
   ngOnInit(): void {
-    console.log('tier', this.tier);
-
+    // console.log('tier', this.tier);
     switch (this.tier) {
       case 'warning':
       case 'light':

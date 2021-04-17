@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Tier } from '../../types/tier.type';
 import { Size } from '../../types/size.type';
 
@@ -15,8 +15,14 @@ export class ButtonComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit(): void {
     this.sizeClass = this.size ? `btn-${this.size}` : '';
+  }
+
+  @HostListener('click')
+  buttonClick(): void {
+    console.log('[ButtonComponent] [LOG] boton clickeado');
   }
 
 }

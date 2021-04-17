@@ -23,6 +23,8 @@
 
 `ng g c <ruta del componente>/<nombre del componente>`
 
+`ng g c <ruta del componente>/<nombre del componente> --skip-test`
+
 ###  Correr proyecto
 
 `ng serve`
