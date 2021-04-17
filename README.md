@@ -25,6 +25,14 @@
 
 `ng g c <ruta del componente>/<nombre del componente> --skip-test`
 
+###  Generar un pipe
+
+`ng generate pipe <nombre del pipe>`
+
+`ng g p <nombre del pipe>`
+
+`ng g p <ruta del pipe>/<nombre del pipe>`
+
 ###  Correr proyecto
 
 `ng serve`
