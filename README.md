@@ -25,6 +25,10 @@
 
 `ng g c <ruta del componente>/<nombre del componente> --skip-test`
 
+###  Generar un view
+
+`ng g c <nombre del componente> --type=view --skip-selector`
+
 ###  Generar un pipe
 
 `ng generate pipe <nombre del pipe>`
@@ -32,6 +36,11 @@
 `ng g p <nombre del pipe>`
 
 `ng g p <ruta del pipe>/<nombre del pipe>`
+
+###  Generar un module
+
+`ng generate module <nombre del module> --routing true`
+`ng g m <nombre del module> --routing true`
 
 ###  Correr proyecto
 
