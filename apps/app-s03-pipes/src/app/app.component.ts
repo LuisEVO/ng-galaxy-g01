@@ -24,4 +24,12 @@ export class AppComponent {
     lastname: 'Vilcarromero',
     status: 'A'
   };
+  fileName;
+  defaultFileName = 'default2.png';
+
+  getIconPath() {
+    console.log('ejecutando');
+
+    return '';
+  }
 }

@@ -88,5 +88,16 @@
     </td>
   </tr>
 
+  <tr>
+    <td>Status (Personalizado)</td>
+    <td>{{ person.status }}</td>
+    <td>| status</td>
+    <td>
+      <img [src]="fileName | iconPath:defaultFileName" alt="" width="50">
+    </td>
+  </tr>
+
 
 </table>
+
+<br *ngFor="let _ of [].constructor(50)" >
