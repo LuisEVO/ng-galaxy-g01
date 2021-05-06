@@ -9,6 +9,12 @@
 
 `ng new <nombre-proyecto> --strict true|false --create-application false`
 
+### Generar una libreria 
+
+`ng generate library <nombre de la libreria> --prefix <nombre del prefijo>`
+
+`ng g lib <nombre de la libreria> <nombre del prefijo>`
+
 ### Generar una aplicacion 
 
 `ng generate application <nombre de la aplicación>  --routing true|false --style css`

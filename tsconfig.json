@@ -3,6 +3,14 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@galaxy/components": [
+        "libs/components/src/public-api.ts",
+      ],
+      "@galaxy/components/*": [
+        "libs/components/src/lib/*",
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
