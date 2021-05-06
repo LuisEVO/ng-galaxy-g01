@@ -9,7 +9,7 @@
 
 `ng new <nombre-proyecto> --strict true|false --create-application false`
 
-### Generar una libreria 
+### Generar una libreria (Revisar path tsconfig.json)
 
 `ng generate library <nombre de la libreria> --prefix <nombre del prefijo>`
 
