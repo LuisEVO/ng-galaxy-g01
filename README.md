@@ -43,6 +43,11 @@
 
 `ng g p <ruta del pipe>/<nombre del pipe>`
 
+###  Generar un servicio
+
+`ng generate service <nombre del servicio>`
+`ng g s <nombre del servicio>`
+
 ###  Generar un module
 
 `ng generate module <nombre del module> --routing true`
@@ -65,5 +70,10 @@
 `ng build`
 `ng build --project <nombre de la aplicación>`
 
+###  Ejecutar pruebas unitarias
+
+`ng test`
+`ng test --project <nombre de la aplicación>`
+`ng test --project <nombre de la aplicación> --code-coverage true`
 
 
