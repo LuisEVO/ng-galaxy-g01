@@ -53,6 +53,20 @@
 `ng generate module <nombre del module> --routing true`
 `ng g m <nombre del module> --routing true`
 
+###  Generar un interceptor
+
+`ng generate interceptor <nombre del interceptor>`
+`ng g interceptor <nombre del interceptor>`
+
+###  Generar un resolver
+
+`ng generate resolver <nombre del resolver>`
+`ng g resolver <nombre del resolver>`
+
+###  Generar un resolver
+
+`ng generate guard <nombre del guardian>`
+
 ###  Correr proyecto
 
 `ng serve`
