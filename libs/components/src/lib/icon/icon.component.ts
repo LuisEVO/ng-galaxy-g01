@@ -2,14 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'glx-icon',
-  template: '<span class="icon-{{ name }}"></span>',
-  styles: [`
-    @import './'
-    $color = 'red';
-    .icon {
-      background: $color
-    }
-  `],
+  templateUrl: './icon.component.html',
+  styleUrls: ['./icon.component.css']
 })
 export class IconComponent implements OnInit {
   @Input() name: string;
