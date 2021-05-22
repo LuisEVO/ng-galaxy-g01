@@ -7,6 +7,7 @@ import { ProductListView } from './views/product-list/product-list.view';
 import { ProductDetailView } from './views/product-detail/product-detail.view';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ConfigHttpInterceptor } from './commons/interceptors/config-http.interceptor';
+import { AppInterceptorsModule } from './commons/interceptors/interceptors.module';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,8 @@ import { ConfigHttpInterceptor } from './commons/interceptors/config-http.interc
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ConfigHttpInterceptor,
-      multi: true
-    }
+    HttpClientModule,
+    AppInterceptorsModule
   ],
   bootstrap: [AppComponent]
 })

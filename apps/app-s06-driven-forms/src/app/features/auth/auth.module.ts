@@ -6,6 +6,7 @@ import { SignInView } from './views/sign-in/sign-in.view';
 import { FormsModule } from '@angular/forms';
 import { AppFormsModule } from '../../commons/forms/forms.module';
 import { AppComponentsModule } from '../../commons/components/components.module';
+import { AuthCommonModule } from './common/common.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AppComponentsModule } from '../../commons/components/components.module'
   imports: [
     CommonModule,
     AuthRoutingModule,
+    AuthCommonModule,
     FormsModule,
     AppFormsModule,
     AppComponentsModule

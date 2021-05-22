@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { EmailFormatDirective } from './email-format.directive';
+import { EmailExistDirective } from './email-exist.directive';
 
 @NgModule({
   declarations: [
-    EmailFormatDirective
+    EmailFormatDirective,
+    EmailExistDirective
   ],
   exports: [
-    EmailFormatDirective
+    EmailFormatDirective,
+    EmailExistDirective
   ]
 })
 export class AppFormsModule { }

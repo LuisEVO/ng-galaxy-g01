@@ -167,5 +167,12 @@
       "category": "women's clothing",
       "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
     }
+  ],
+  "users": [
+    {
+      "email": "lvilcarromero@galaxy.edu.pe",
+      "password": "$2a$10$qKSg9C90hMLvc5s1W8hh/utHd2iaVwkUlC5.i1iUgiLztYnpm83TG",
+      "id": 1
+    }
   ]
 }

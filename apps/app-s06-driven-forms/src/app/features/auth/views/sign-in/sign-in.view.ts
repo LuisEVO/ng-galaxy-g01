@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, NgForm, NgModel } from '@angular/forms';
 import { RadioGroupOption } from 'apps/app-s06-driven-forms/src/app/commons/components/radio-group/radio-group.interface';
+import { SessionService } from 'apps/app-s06-driven-forms/src/app/commons/services/session.service';
+import { AuthHttpService } from '../../common/services/auth-http.service';
 
 @Component({
   templateUrl: './sign-in.view.html',
@@ -17,7 +19,10 @@ export class SignInView implements OnInit {
     { label: 'Student', value: 'S' },
   ]
 
-  constructor() { }
+  constructor(
+    private authHttp: AuthHttpService,
+    private session: SessionService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -26,6 +31,10 @@ export class SignInView implements OnInit {
     console.log(form);
     if (form.valid) {
       console.log(form.value);
+      this.authHttp.signIn(form.value)
+      .subscribe(
+        token => this.session.create(token.accessToken) 
+      );
     }
     // call service
   }
