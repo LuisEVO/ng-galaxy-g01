@@ -35,6 +35,11 @@
 
 `ng g c <nombre del componente> --type=view --skip-selector`
 
+###  Generar una directiva
+
+`ng generate directive <nombre de la directiva>`
+`ng g d <nombre de la directiva>`
+
 ###  Generar un pipe
 
 `ng generate pipe <nombre del pipe>`
