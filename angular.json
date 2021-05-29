@@ -1434,6 +1434,122 @@
           }
         }
       }
+    },
+    "app-s07-ractive-forms": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/app-s07-ractive-forms",
+      "sourceRoot": "apps/app-s07-ractive-forms/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/app-s07-ractive-forms",
+            "index": "apps/app-s07-ractive-forms/src/index.html",
+            "main": "apps/app-s07-ractive-forms/src/main.ts",
+            "polyfills": "apps/app-s07-ractive-forms/src/polyfills.ts",
+            "tsConfig": "apps/app-s07-ractive-forms/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/app-s07-ractive-forms/src/favicon.ico",
+              "apps/app-s07-ractive-forms/src/assets"
+            ],
+            "styles": [
+              "apps/app-s07-ractive-forms/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/app-s07-ractive-forms/src/environments/environment.ts",
+                  "with": "apps/app-s07-ractive-forms/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "app-s07-ractive-forms:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app-s07-ractive-forms:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app-s07-ractive-forms:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/app-s07-ractive-forms/src/test.ts",
+            "polyfills": "apps/app-s07-ractive-forms/src/polyfills.ts",
+            "tsConfig": "apps/app-s07-ractive-forms/tsconfig.spec.json",
+            "karmaConfig": "apps/app-s07-ractive-forms/karma.conf.js",
+            "assets": [
+              "apps/app-s07-ractive-forms/src/favicon.ico",
+              "apps/app-s07-ractive-forms/src/assets"
+            ],
+            "styles": [
+              "apps/app-s07-ractive-forms/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/app-s07-ractive-forms/tsconfig.app.json",
+              "apps/app-s07-ractive-forms/tsconfig.spec.json",
+              "apps/app-s07-ractive-forms/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/app-s07-ractive-forms/e2e/protractor.conf.js",
+            "devServerTarget": "app-s07-ractive-forms:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-s07-ractive-forms:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "app-s01-data-binding"

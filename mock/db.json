@@ -174,5 +174,21 @@
       "password": "$2a$10$qKSg9C90hMLvc5s1W8hh/utHd2iaVwkUlC5.i1iUgiLztYnpm83TG",
       "id": 1
     }
+  ],
+  "bill": [
+    {
+      "id": 1,
+      "client": {
+        "documentNumber": "11111",
+        "fullName": "User"
+      },
+      "products": [
+        {
+          "product": "Product 1",
+          "quantity": 1,
+          "price": 10
+        }
+      ]
+    }
   ]
 }
