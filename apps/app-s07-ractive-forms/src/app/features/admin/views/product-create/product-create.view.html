@@ -1,3 +1,7 @@
+<form [formGroup]="formCheckboxes">
+  <input type="checkbox" (change)="addCheckbox($event)" id="cbox1" value="first_checkbox"><label>Este es mi primer checkbox</label>
+  <input type="checkbox" (change)="addCheckbox($event)" id="cbox2" value="second_checkbox"><label>Este es mi segundo checkbox</label>
+</form>
 
 <div class="container">
   <input class="form-control" type="text" [formControl]="titleField" >

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { RadioGroupOption } from 'apps/app-s06-driven-forms/src/app/commons/components/radio-group/radio-group.interface';
 import { AsyncValidatorsService } from 'apps/app-s07-ractive-forms/src/app/commons/forms/async-validators.service';
 import { CustomValidators } from 'apps/app-s07-ractive-forms/src/app/commons/forms/custom.validators';
@@ -9,6 +9,10 @@ import { CustomValidators } from 'apps/app-s07-ractive-forms/src/app/commons/for
   styleUrls: ['./product-create.view.css'],
 })
 export class ProductCreateView implements OnInit {
+  formCheckboxes = new FormGroup({
+    checkboxes: new FormArray([])
+  })
+
   titleField: FormControl = new FormControl('Hola Mundo', Validators.required);
 
   productForm: FormGroup;
@@ -83,5 +87,15 @@ export class ProductCreateView implements OnInit {
     // PARA QUITAR ALGUNAS VALIDACIONES this.titleField.setValidators([Validators.minLength(5)]);
     this.titleField.clearValidators();
     this.titleField.updateValueAndValidity();
+  }
+
+  addCheckbox(e) {
+    const array = this.formCheckboxes.get('checkboxes') as FormArray;
+    if (e.target.checked) {
+      array.push(new FormControl(e.target.value));
+    } else {
+      const index = array.value.findIndex(checkboxValue => checkboxValue === e.target.value)
+      array.removeAt(index);
+    }
   }
 }
