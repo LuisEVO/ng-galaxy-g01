@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { iif, of } from 'rxjs';
+import { Select, Store } from '@ngxs/store';
+import { iif, Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { Product } from '../../commons/interfaces/product.interface';
 import { ProductsHttpService } from '../../commons/services/products-http.service';
 import { ProductAddAction, ProductSelectAction, ProductUpdateAction } from '../../commons/store/product/product.actions';
-import { ProductStore } from '../../commons/store/product/product.store';
+import { ProductState } from '../../commons/store/product/product.state';
 
 @Component({
   templateUrl: './product-form.view.html',
@@ -15,12 +17,14 @@ export class ProductFormView implements OnInit {
   productForm: FormGroup;
   productId: number;
 
+  @Select(ProductState.productSelected) productSelected$: Observable<Product>;
+
   constructor(
     private builder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private productsHttp: ProductsHttpService,
-    private productStore: ProductStore,
+    private store: Store,
   ) {
     this.productForm = this.builder.group({
       title: [null, Validators.required],
@@ -43,8 +47,8 @@ export class ProductFormView implements OnInit {
 
   private load(productId: string): void {
     this.productId = +productId;
-    this.productStore.dispatch(new ProductSelectAction({ productId: this.productId }));
-    this.productStore.productSelected$
+    this.store.dispatch(new ProductSelectAction(this.productId));
+    this.productSelected$
       .pipe(
         switchMap(productSelected => iif(() => !productSelected, this.productsHttp.getOne(this.productId), of(productSelected)))
       )
@@ -64,7 +68,7 @@ export class ProductFormView implements OnInit {
     this.productsHttp.update(this.productId, this.productForm.value)
     .subscribe(
       productUpdated => {
-        this.productStore.dispatch(new ProductUpdateAction({ productId: this.productId, product: productUpdated }));
+        this.store.dispatch(new ProductUpdateAction(this.productId, productUpdated));
         this.goListView();
       }
     );
@@ -74,7 +78,7 @@ export class ProductFormView implements OnInit {
     this.productsHttp.create(this.productForm.value)
     .subscribe(
       productCreated => {
-        this.productStore.dispatch(new ProductAddAction({ product: productCreated }));
+        this.store.dispatch(new ProductAddAction(productCreated));
         this.goListView();
       }
     );

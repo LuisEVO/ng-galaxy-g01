@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { Select, Store } from '@ngxs/store';
 import { EMPTY, iif, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Product } from '../../commons/interfaces/product.interface';
 import { ProductsHttpService } from '../../commons/services/products-http.service';
 import { ProductRemoveAction, ProductSetAction } from '../../commons/store/product/product.actions';
-import { ProductStore } from '../../commons/store/product/product.store';
+import { ProductState } from '../../commons/store/product/product.state';
 
 @Component({
   templateUrl: './product-list.view.html',
   styleUrls: ['./product-list.view.css']
 })
 export class ProductListView implements OnInit {
-  products$: Observable<Product[]>;
+  @Select(ProductState.products) products$: Observable<Product[]>;
+  @Select(ProductState.loaded) loaded$: Observable<boolean>;
   // products: Product[] = [];
 
   constructor(
     private productsHttp: ProductsHttpService,
-    private productStore: ProductStore
+    private store: Store
   ) {
-    this.products$ = this.productStore.products$;
     /*
     this.productStore.products$
     .subscribe(
@@ -36,11 +37,11 @@ export class ProductListView implements OnInit {
       );
     }
     */
-    this.productStore.loaded$
+    this.loaded$
       .pipe(
         switchMap(isLoaded => iif(() => !isLoaded, this.productsHttp.getAll(), EMPTY))
       ).subscribe(
-        products => this.productStore.dispatch(new ProductSetAction({ products })),
+        products => this.store.dispatch(new ProductSetAction(products)),
       );
   }
 
@@ -49,7 +50,7 @@ export class ProductListView implements OnInit {
     if (yes) {
       this.productsHttp.delete(productId)
       .subscribe(
-        () => this.productStore.dispatch(new ProductRemoveAction({ productId }))
+        () => this.store.dispatch(new ProductRemoveAction(productId))
       );
     }
   }
