@@ -1939,6 +1939,127 @@
           }
         }
       }
+    },
+    "app-s09-pdf-excel": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/app-s09-pdf-excel",
+      "sourceRoot": "apps/app-s09-pdf-excel/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/app-s09-pdf-excel",
+            "index": "apps/app-s09-pdf-excel/src/index.html",
+            "main": "apps/app-s09-pdf-excel/src/main.ts",
+            "polyfills": "apps/app-s09-pdf-excel/src/polyfills.ts",
+            "tsConfig": "apps/app-s09-pdf-excel/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/app-s09-pdf-excel/src/favicon.ico",
+              "apps/app-s09-pdf-excel/src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/ngx-extended-pdf-viewer/assets/",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "apps/app-s09-pdf-excel/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/app-s09-pdf-excel/src/environments/environment.ts",
+                  "with": "apps/app-s09-pdf-excel/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "app-s09-pdf-excel:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app-s09-pdf-excel:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app-s09-pdf-excel:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/app-s09-pdf-excel/src/test.ts",
+            "polyfills": "apps/app-s09-pdf-excel/src/polyfills.ts",
+            "tsConfig": "apps/app-s09-pdf-excel/tsconfig.spec.json",
+            "karmaConfig": "apps/app-s09-pdf-excel/karma.conf.js",
+            "assets": [
+              "apps/app-s09-pdf-excel/src/favicon.ico",
+              "apps/app-s09-pdf-excel/src/assets"
+            ],
+            "styles": [
+              "apps/app-s09-pdf-excel/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/app-s09-pdf-excel/tsconfig.app.json",
+              "apps/app-s09-pdf-excel/tsconfig.spec.json",
+              "apps/app-s09-pdf-excel/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/app-s09-pdf-excel/e2e/protractor.conf.js",
+            "devServerTarget": "app-s09-pdf-excel:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-s09-pdf-excel:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "app-s01-data-binding"
