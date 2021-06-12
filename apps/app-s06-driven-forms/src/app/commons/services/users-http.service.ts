@@ -12,10 +12,10 @@ export class UsersHttpService {
 
   searchByEmail(email: string): Observable<User[]> {
     // FORMA CONVENCIONAL: return this.http.get(`/users?email=${email}`)
-    
-    const params = new HttpParams()
-    .set('email', email)
 
-    return this.http.get<User[]>('/users', { params })
+    const params = new HttpParams()
+    .set('email', email);
+
+    return this.http.get<User[]>('/users', { params });
   }
 }

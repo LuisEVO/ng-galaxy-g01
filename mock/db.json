@@ -190,5 +190,19 @@
         }
       ]
     }
+  ],
+  "workshops": [
+    { 
+      "id": 1,
+      "slug": "angular-12",
+      "title": "Angular 12",
+      "date": "2021-06-10"
+    },
+    { 
+      "id": 2,
+      "slug": "javascript",
+      "title": "Javascript",
+      "date": "2021-06-12"
+    }
   ]
 }

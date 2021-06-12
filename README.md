@@ -88,6 +88,7 @@
 
 `ng build`
 `ng build --project <nombre de la aplicación>`
+`ng build --project <nombre de la aplicación> --configuration <nombre del ambiente>`
 
 ###  Ejecutar pruebas unitarias
 

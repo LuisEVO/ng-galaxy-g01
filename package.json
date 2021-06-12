@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "mock:start": "json-server-auth --watch mock/db.json",
+    "mock:start": "json-server-auth --watch mock/db.json --routes mock/routes.json",
     "sonar": "sonar-scanner"
   },
   "private": true,
@@ -26,8 +26,15 @@
     "@ngxs/store": "^3.7.2",
     "bootstrap": "^5.0.1",
     "bootstrap-icons": "^1.5.0",
+    "exceljs": "^4.2.1",
+    "file-saver": "^2.0.5",
+    "file-saver-es": "^2.0.5",
+    "ngx-extended-pdf-viewer": "^9.0.2",
+    "pdfmake": "^0.1.71",
+    "pdfmake-wrapper": "^2.1.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "xlsx": "^0.17.0",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
@@ -37,6 +44,7 @@
     "@ngxs/devtools-plugin": "^3.7.2",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "@types/pdfmake": "^0.1.17",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",

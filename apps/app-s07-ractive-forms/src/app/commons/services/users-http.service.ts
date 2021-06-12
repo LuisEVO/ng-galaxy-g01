@@ -19,4 +19,14 @@ export class UsersHttpService {
 
     return this.http.get<User[]>('/users', { params });
   }
+
+  updateAvatar(idUser: number, file: File): Observable<void> {
+
+    const body = new FormData();
+
+    body.append('avatar', file);
+    body.append('name', 'username');
+
+    return this.http.put<void>(`/users/${idUser}/avatar`, body);
+  }
 }
