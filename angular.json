@@ -2061,28 +2061,33 @@
         }
       }
     },
-    "workshop-s02": {
+    "shop": {
       "projectType": "application",
-      "schematics": {},
-      "root": "apps/workshop-s02",
-      "sourceRoot": "apps/workshop-s02/src",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "examples/shop",
+      "sourceRoot": "examples/shop/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/workshop-s02",
-            "index": "apps/workshop-s02/src/index.html",
-            "main": "apps/workshop-s02/src/main.ts",
-            "polyfills": "apps/workshop-s02/src/polyfills.ts",
-            "tsConfig": "apps/workshop-s02/tsconfig.app.json",
+            "outputPath": "dist/shop",
+            "index": "examples/shop/src/index.html",
+            "main": "examples/shop/src/main.ts",
+            "polyfills": "examples/shop/src/polyfills.ts",
+            "tsConfig": "examples/shop/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/workshop-s02/src/favicon.ico",
-              "apps/workshop-s02/src/assets"
+              "examples/shop/src/favicon.ico",
+              "examples/shop/src/assets"
             ],
             "styles": [
-              "apps/workshop-s02/src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "examples/shop/src/styles.scss"
             ],
             "scripts": []
           },
@@ -2090,11 +2095,20 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/workshop-s02/src/environments/environment.ts",
-                  "with": "apps/workshop-s02/src/environments/environment.prod.ts"
+                  "replace": "examples/shop/src/environments/environment.ts",
+                  "with": "examples/shop/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "fonts": {
+                  "inline": true
+                },
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": true
+                }
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
@@ -2119,33 +2133,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "workshop-s02:build"
+            "browserTarget": "shop:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "workshop-s02:build:production"
+              "browserTarget": "shop:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "workshop-s02:build"
+            "browserTarget": "shop:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "apps/workshop-s02/src/test.ts",
-            "polyfills": "apps/workshop-s02/src/polyfills.ts",
-            "tsConfig": "apps/workshop-s02/tsconfig.spec.json",
-            "karmaConfig": "apps/workshop-s02/karma.conf.js",
+            "main": "examples/shop/src/test.ts",
+            "polyfills": "examples/shop/src/polyfills.ts",
+            "tsConfig": "examples/shop/tsconfig.spec.json",
+            "karmaConfig": "examples/shop/karma.conf.js",
             "assets": [
-              "apps/workshop-s02/src/favicon.ico",
-              "apps/workshop-s02/src/assets"
+              "examples/shop/src/favicon.ico",
+              "examples/shop/src/assets"
             ],
             "styles": [
-              "apps/workshop-s02/src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "examples/shop/src/styles.scss"
             ],
             "scripts": []
           }
@@ -2154,9 +2169,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/workshop-s02/tsconfig.app.json",
-              "apps/workshop-s02/tsconfig.spec.json",
-              "apps/workshop-s02/e2e/tsconfig.json"
+              "examples/shop/tsconfig.app.json",
+              "examples/shop/tsconfig.spec.json",
+              "examples/shop/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -2166,21 +2181,13 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "apps/workshop-s02/e2e/protractor.conf.js",
-            "devServerTarget": "workshop-s02:serve"
+            "protractorConfig": "examples/shop/e2e/protractor.conf.js",
+            "devServerTarget": "shop:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "workshop-s02:serve:production"
+              "devServerTarget": "shop:serve:production"
             }
-          }
-        },
-        "deploy": {
-          "builder": "@netlify-builder/deploy:deploy",
-          "options": {
-            "outputPath": "dist/workshop-s02",
-            "netlifyToken": "6-5uMJh3KpQ0Xz4DmsIxofyy8pe8tEAhj8ou8FwEDRc",
-            "siteId": "70a7fe8a-c74a-4c66-bed2-79606da40b38"
           }
         }
       }
