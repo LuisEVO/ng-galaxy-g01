@@ -4,10 +4,17 @@ on:
   push:
     branches:
       - main
+    paths:
+      - examples/shop/**
+      - .github/workflows/azure-static-web-apps-ashy-sea-01b016e10.yml
+
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+    paths:
+      - examples/shop/**
+      - .github/workflows/azure-static-web-apps-ashy-sea-01b016e10.yml
 
 jobs:
   build_and_deploy_job:
